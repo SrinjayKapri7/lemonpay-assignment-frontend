@@ -19,7 +19,7 @@ const AppRoutes = () => {
       <Route
         path="/"
         element={
-          isAuthenticated == true ? (
+          isAuthenticated === true ? (
             <Navigate to="/tasks" replace />
           ) : (
             <Navigate to="/signup" replace />
@@ -30,7 +30,7 @@ const AppRoutes = () => {
       <Route
         path="/login"
         element={
-          isAuthenticated == true ? <Navigate to="/tasks" replace /> : <Login />
+          isAuthenticated === true ? <Navigate to="/tasks" replace /> : <Login />
         }
       />
       <Route
