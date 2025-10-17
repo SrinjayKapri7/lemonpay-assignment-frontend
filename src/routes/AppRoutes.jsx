@@ -36,7 +36,7 @@ const AppRoutes = () => {
       <Route
         path="/signup"
         element={
-          isAuthenticated == true ? (
+          isAuthenticated === true ? (
             <Navigate to="/tasks" replace />
           ) : (
             <Signup />
