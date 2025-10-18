@@ -1,12 +1,29 @@
-import axios from "axios";
+// import axios from "axios";
 
-const API_URL = process.env.REACT_APP_BACKEND_URL; // change base API URL here
+// const API_URL = process.env.REACT_APP_BACKEND_URL; // change base API URL here
 
+// export const loginUser = (email, password) =>
+//   axios.post(`${API_URL}/api/auth/login`, { email, password }, { withCredentials: true });
+
+// export const signupUser = (email, password) =>
+//   axios.post(`${API_URL}/api/auth/register`, { email, password });
+
+// export const logoutUser = () =>
+//   axios.post(`${API_URL}/api/auth/logout`, {}, { withCredentials: true });
+
+
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
+
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
+// Now all requests default to sending cookies
 export const loginUser = (email, password) =>
-  axios.post(`${API_URL}/api/auth/login`, { email, password }, { withCredentials: true });
+  axios.post(`${API_URL}/api/auth/login`, { email, password });
 
 export const signupUser = (email, password) =>
   axios.post(`${API_URL}/api/auth/register`, { email, password });
 
 export const logoutUser = () =>
-  axios.post(`${API_URL}/api/auth/logout`, {}, { withCredentials: true });
+  axios.post(`${API_URL}/api/auth/logout`);
